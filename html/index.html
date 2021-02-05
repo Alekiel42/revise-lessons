@@ -17,15 +17,18 @@
         <main class="quizArea">
                 <h2>Les questions</h2>
                 <form action="submit" class="formQuiz">
-                        <label for="question" id="questionArea"></label>
+                        <label for="question">
+                                <span id="questionArea"></span>
+                                <span id="statusAnswer"></span></label>
                         <br/> <!-- retour a la ligne en CSS? -->
                         <textarea name="question" id="question" cols="30" rows="10"></textarea>
                         <br/> <!-- retour a la ligne en CSS? -->
 
                         <button id="quiz-btn" type="submit">C'est mon dernier mot Jean-Pierre</button>
+                        <button type="reset">Une nouvelle question</button>
                 </form>
         </main>
-        <footer>
+        <footer id="infoSoluce">
                 <!-- liste de reponse fausse et lien vers revision -->
         </footer>
         <script src="./../js/main.js"></script>

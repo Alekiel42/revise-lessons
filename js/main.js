@@ -1,4 +1,5 @@
 var allQuestion = [];
+var numberWrongAnswers = 0;
 
 // Comment importer cette liste de question ici, à partir d'un autre fichier
 allQuestion.push({
@@ -32,19 +33,52 @@ allQuestion.push({
 
 // FONCTION QUI COMPARE réponse user à la solution
 function compareAnswer(event){
+        console.log("la solution est: ", allQuestion[indexQuestion].solution);
         event.preventDefault();
         var answer = document.getElementById('question').value; // recup valeur dans textarea, id "question"
-        console.log("reponse:", answer);
 
         // reflechir au cas de reponses numeriques vs string
         if (answer === allQuestion[indexQuestion].solution ){
-                console.log("bravo");
-                // afficher en dessous c'est juste ! 
+                var rightAnswer = document.getElementById('statusAnswer');                
+                rightAnswer.innerHTML = " Bravo ! C'est juste !";
+                
+                // mettre success a 1
+
         } else {
-                console.log("faux");
-                // afficher en dessous faux avec la bonne reponse + lien de revision
+
+                numberWrongAnswers++;
+                var wrongAnswer = document.getElementById('statusAnswer');
+                wrongAnswer.innerHTML = " Outch ! C'est faux !";   
+
+                // get Footer
+                var infoSoluce = document.getElementById('infoSoluce');   
+                console.log("recup footer", infoSoluce);             
+
+                // creation de la div avec la mauvaise reponse
+                var soluceArea = document.createElement('article');
+                console.log("creation div soluceArea:",soluceArea);
+                soluceArea.id = 'wrongAnswer' + numberWrongAnswers;
+
+                // place la div mauvaise reponse dans footer
+                infoSoluce.appendChild(soluceArea);
+
+                
+                // string pour annoncer mauvaise reponse
+                var explainSolution = allQuestion[indexQuestion].question + "<br/>Bonne réponse : " + allQuestion[indexQuestion].solution + "<br/> Pour réviser : " + allQuestion[indexQuestion].revision;
+               console.log("string solution", explainSolution);
+               
+               soluceArea.innerHTML = explainSolution;
+                
+
+                        // success a 0?
+
         }
 
+}
+
+function newQuestion(){
+        // remplacer la question
+        // si div c'est juste vs faux : la retirer
 }
 
 
