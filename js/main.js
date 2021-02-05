@@ -29,6 +29,25 @@ allQuestion.push({
         revision: "https:www.ici.com"
 });
 
+
+// FONCTION QUI COMPARE réponse user à la solution
+function compareAnswer(event){
+        event.preventDefault();
+        var answer = document.getElementById('question').value; // recup valeur dans textarea, id "question"
+        console.log("reponse:", answer);
+
+        // reflechir au cas de reponses numeriques vs string
+        if (answer === allQuestion[indexQuestion].solution ){
+                console.log("bravo");
+                // afficher en dessous c'est juste ! 
+        } else {
+                console.log("faux");
+                // afficher en dessous faux avec la bonne reponse + lien de revision
+        }
+
+}
+
+
 // chiffre random entre 0 et nombre item tableau inclus
 var indexQuestion = Math.round(Math.random() * (allQuestion.length-1));
 console.log("nombre hasard:",indexQuestion);
@@ -45,8 +64,17 @@ console.log(questionArea);
 //ecrire la première question dans la page, random
 questionArea.innerHTML = questionToAsk;
 
+// on ecoute le clic sur le bouton submit du formulaire. On lance fonction compareAnswer
+document.querySelector('.formQuiz').addEventListener('submit', compareAnswer);
 
-// reset comportement btn submit
+
+
+
+
+
+
+
+
 // si reponse === solution > creer une div dans footer avec juste ou faux
 // si juste success a 1
 // faire en sorte que la question choisi soit a zero point
