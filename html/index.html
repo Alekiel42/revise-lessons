@@ -9,7 +9,7 @@
         <title>Révision par des questions</title>
 </head>
 <body>
-        <script src="./../js/main.js"></script>
+
         <header>
                 <h1 class="quizTitle">Javascript Quiz</h1>
                 <div>Points</div>
@@ -17,12 +17,18 @@
         <main class="quizArea">
                 <h2>Les questions</h2>
                 <form action="submit">
-                        <!-- déployer le formulaire pour récupérer reponse à la question -->
+                        <label for="question" id="questionArea"></label>
+                        <br/> <!-- retour a la ligne en CSS? -->
+                        <textarea name="question" id="question" cols="30" rows="10"></textarea>
+                        <br/> <!-- retour a la ligne en CSS? -->
+
+                        <button id="quiz-btn" type="submit">C'est mon dernier mot Jean-Pierre</button>
                 </form>
         </main>
         <footer>
                 <!-- liste de reponse fausse et lien vers revision -->
         </footer>
-        
+        <script src="./../js/main.js"></script>
+        <script src="./../js/question.js"></script>
 </body>
 </html>
