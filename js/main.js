@@ -83,6 +83,8 @@ function randomIndex(){
         return indexQuestion;
 }
 
+
+
 function postQuestion(indexRejected) {
 
         var newIndexQuestion = null; 
@@ -107,7 +109,7 @@ questionArea.innerHTML = questionToAsk;
 document.querySelector(".formQuiz").addEventListener("submit", compareAnswer);
 
 // on ecoute le clic sur le btn de type" reset" nouvelle question"
-document.querySelector(".formQuiz").addEventListener("reset", postQuestion);
+document.querySelector(".formQuiz").addEventListener("reset", postQuestion); // voir comment envoyer index en argument
 
 // si reponse === solution > creer une div dans footer avec juste ou faux
 // si juste success a 1

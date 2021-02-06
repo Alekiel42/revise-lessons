@@ -1,16 +1,88 @@
 body{
-        background-color: grey;        
+        background-color: #008c81;    
+        font-family: 'Comfortaa', cursive;
 }
 
+.boxQuiz{
+        width: 70%;
+        margin: auto;
+}
+
+/* HEADER */
 .quizTitle{
+        color: white;
         font-size: 2rem;
         font-weight: bold;
         text-align: center;
         padding: 1rem;
 }
 
+.score_progression{
+}
+
+.score_progression_step{
+        height: 1rem;
+        border: 2px solid black;
+        border-radius: 1rem;
+}
+
+.score_progression_step--right, .score_progression_step_text--Right, .score_progression_step_text--Wrong{
+        display: inline-block;
+}
+
+.score_progression_step--right{
+        border-radius: 1rem 0 0 1rem;
+        background-color: green;
+        height: 100%;
+        width: 60%;
+}
+
+.score_progression_step_text{
+        display: flex;
+        justify-content: space-between;
+        color: white;
+
+}
+
+.score_progression_step_text--Right{
+        padding: 1rem 0 0 1rem;
+}
+
+
+.score_progression_step_text--Wrong{
+        padding: 1rem 1rem 0 0;
+}
+/* attention si 100% les radius a droite doivent etre arrondi aussi */
+
+
+/* FIN DE HEADER */ 
+
 .quizArea{
-        margin: 1rem;
+        margin-top: 2rem;
         padding: 1rem;
         background-color: white;
+        border-radius: 1rem;
+        box-shadow: 4px 7px 16px 5px rgba(0,0,0,0.48);
 }
+
+h2{
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.6rem;
+}
+
+.formQuiz{
+        
+        width: 80%;
+        margin: 2rem auto;
+}
+
+
+/* FOOTER */
+
+#infoSoluce{
+        color: white;
+        padding-top: 1rem;
+}
+
+/* FIN DE FOOTER */
